@@ -14,8 +14,7 @@ script:
 after_script:
   - git config user.name "kongzifan"
   - git config user.email "kongzf@126.com"
-  - git clone git@git.dev.tencent.com:kongzifan/blog-dev.git blog
-  - cp -r ~/blog/source/_posts/. ./source/_posts
-  - git add ./source/posts/.
+  - cp -r blog/source/_posts/. ./kongzf/CsdnSyncHexo/source/_posts
+  - git add ./kongzf/CsdnSyncHexo/source/_posts/.
   - git commit -m "同步csdn博客"
   - git push
