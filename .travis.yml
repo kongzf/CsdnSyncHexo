@@ -12,10 +12,11 @@ script:
   - npm start
 
 after_script:
+  - cd ../
   - git config user.name "kongzifan"
   - git config user.email "kongzf@126.com"
-  - git clone git@github.com:kongzf/blog.git kongzf/blog
-  - cp -r blog/source/_posts/. ./kongzf/blog/source/_posts
-  - git add ./kongzf/blog/source/_posts/.
+  - git clone git@github.com:kongzf/blog.git blog
+  - cp -r CsdnSyncHexo/blog/. ./blog/source/_posts
+  - git add ./blog/source/_posts/.
   - git commit -m "同步csdn博客"
   - git push
