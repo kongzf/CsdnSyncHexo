@@ -1,0 +1,21 @@
+language: node_js
+node_js: stable
+# $: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - npm start
+
+after_script:
+  - git config user.name "kongzifan"
+  - git config user.email "kongzf@126.com"
+  - git clone git@git.dev.tencent.com:kongzifan/blog-dev.git
+  - cp -r ~/blog/source/_posts/. ./source/_posts
+  - git add ./source/posts/.
+  - git commit -m "同步csdn博客"
+  - git push
