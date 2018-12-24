@@ -14,7 +14,7 @@ script:
 after_script:
   - cd ../
   - git clone "https://${GH_TOKEN}@${GH_REF}" blog
-  - cp -r CsdnSyncHexo/_posts/. ./blog/source/_posts
+  - cp -rf CsdnSyncHexo/_posts/. ./blog/source/_posts
   - cd blog
   - git add ./source/_posts/.
   - git commit -m "同步csdn博客"
