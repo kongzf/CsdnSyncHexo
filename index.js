@@ -30,8 +30,8 @@ const main = async () => {
     await Promise.all(p)
     console.log('生成完成.....准备进行hexo部署')
     try {
-        execSync('hexo g', { cwd: base })
-        console.log('生成静态文件成功....')
+        //execSync('hexo g', { cwd: base })
+        //console.log('生成静态文件成功....')
         //execSync('hexo d', { cwd: base })
         //console.log('部署成功....')
     } catch (e) {
