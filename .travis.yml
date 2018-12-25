@@ -16,6 +16,7 @@ after_script:
   - git clone "https://${GH_TOKEN}@${GH_REF}" blog
   - cp -rf CsdnSyncHexo/_posts/. ./blog/source/_posts
   - cd blog
+  - git remote set-url origin --add "https://kongzifan:${CO_TOKEN}@${CO_REF}"
   - git add ./source/_posts/.
   - git commit -m "同步csdn博客"
   - git push
@@ -26,5 +27,7 @@ branches:
 
 env:
  global:
-   # Github Pages
+   # Github
    - GH_REF: github.com/kongzf/blog.git
+   # Coding
+   - CO_REF: git.dev.tencent.com/kongzifan/blog-dev.git
